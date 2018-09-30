@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.st.rbac.mapper.CategoryMapper">
+  	
+  	<select id="getDclass" resultType="com.st.rbac.pojo.Category">
+  		select * from category where cid = 0
+  	</select>
+  	
+  	<select id="getXclass" resultType="com.st.rbac.pojo.Category">
+  		select * from category where cid=#{param1}
+  	</select>
+  	
+  	<select id="selectsales" resultType="HashMap">
+  		select * from category 
+  			
+  	</select>
+  	
+  	<!-- <select id="selectcname" resultType="com.st.rbac.pojo.Category">
+  		select * from where cname = #{param1}
+  	</select> -->
+	
+	<update id="addsalesv">
+		update category set salesv = salesv + #{param2} where id = #{param1}
+	</update>
+	
+	<select id="getRow" parameterType="com.st.rbac.pojo.Category" resultType="Integer">
+		select count(*) as count from category
+			<where>
+				<if test="cid == null and cname == null or cname == ''">cid = 0</if>
+				<if test="cid != null">and cid =#{cid}</if>
+				<if test="cname != null and cname != ''">and cname like '%${cname}%'</if>
+			</where>
+			
+	</select>
+	
+	<select id="selectClass" resultType="HashMap">
+		select * from category 
+		<where> 
+			<if test="param2.cid == null and param2.cname == null or param2.cname == ''">cid = 0</if>
+			<if test="param2.cid != null">and cid =#{param2.cid}</if>
+			<if test="param2.cname != null and param2.cname != ''">and cname like '%${param2.cname}%'</if>
+		</where>
+			limit #{param1.start},#{param1.pagerows}
+	</select>
+  	
+  	<update id="modifyClassview" parameterType="com.st.rbac.pojo.Category">
+  		update category set cname = #{cname} where id =#{id}
+  	</update>
+  	
+  	<delete id="deleteClass">
+  		delete from category where id =#{id}
+  	</delete>
+  	
+  	<insert id="addClass" parameterType="com.st.rbac.pojo.Category">
+  		insert into category (cid, cname) values (#{cid}, #{cname})
+  	</insert>
+  	
+  </mapper>

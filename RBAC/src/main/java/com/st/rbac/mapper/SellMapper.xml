@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.st.rbac.mapper.SellMapper">
+  		
+		<select id="getRows" parameterType="com.st.rbac.pojo.Sell" resultType="Integer">
+			select count(*) as count from sell 
+				<where>
+					<if test="stafid != null">and stafid = #{stafid}</if>
+					<if test="staffid != 0 and staffid != null">and staffid =#{staffid}</if>
+					<if test="pid != 0 and pid != null">and pid =#{pid}</if>
+				</where>
+		</select>
+		
+		<select id="selectsell"	resultType="HashMap">
+			select * from sell, user, staff, product 
+				where sell.uid = `user`.id and sell.staffid = staff.id and sell.pid = product.id 
+				<if test="param2.stafid != null">and stafid = #{param2.stafid}</if>
+				<if test="param2.pid != 0 and param2.pid != null">and pid =#{param2.pid}</if>
+				<if test="param2.staffid != 0 and param2.staffid != null">and staffid =#{param2.staffid}</if>
+				limit #{param1.start},#{param1.pagerows}
+		</select>
+		
+		<select id="timeselect" resultType="com.st.rbac.pojo.Sell">
+			select * from sell 
+				<where>
+					<if test="param1 !=null and param2 != null">selltime between #{param1} and #{param2}</if>
+				</where>
+		</select>
+		
+		<insert id="addsell" parameterType="com.st.rbac.pojo.User">
+			insert into sell (uid, staffid, stafid, pid, sellcount, sellprice, selltime, dclassid, xclassid)
+				values (#{uid}, #{staffid}, #{stafid}, #{pid}, #{sellcount}, #{sellprice}, #{selltime}, #{dclassid}, #{xclassid})
+		</insert>
+
+  </mapper>

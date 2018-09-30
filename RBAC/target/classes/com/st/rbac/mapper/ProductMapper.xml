@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.rbac.mapper.ProductMapper">
+
+	<!-- 获取查询到的数据条数 -->
+	<select id="getRows" resultType="Integer">
+		select count(*) as count from product
+			<where>
+				<if test="param2.prname != ''">and prname like '%${param2.prname}%'</if>
+				<if test="param2.dclassid != 0 and param2.dclassid != null">and dclassid = #{param2.dclassid}</if>
+				<if test="param2.xclassid != 0 and param2.xclassid != null">and xclassid =#{param2.xclassid}</if>
+			</where>
+	</select>
+
+	 	<!-- 动态的根据名字模糊查询  或者根据大分类和小分类查询 -->
+	<select id="selectprod" resultType="com.st.rbac.pojo.Product">
+		select * from product
+			<where>
+				<if test="param2.prname != ''">and prname like '%${param2.prname}%'</if>
+				<if test="param2.dclassid != 0 and param2.dclassid != null">and dclassid = #{param2.dclassid}</if>
+				<if test="param2.xclassid != 0 and param2.xclassid != null">and xclassid =#{param2.xclassid}</if>
+			</where> 
+				<if test="param1.pagerows != 0">limit #{param1.start},#{param1.pagerows}</if>
+	</select> 
+	
+	<delete id="deleteprod">
+		delete from product where id = #{param1}
+	</delete>
+	
+	<update id="modifyduct" parameterType="com.st.rbac.pojo.Product">
+		update product 
+			<set>
+				id=id,
+				prname=#{prname},
+				protime=#{protime},
+				sdprice=#{sdprice},
+				lowprice=#{lowprice},
+				details=#{details},
+				<if test="dclassid !=0">dclassid=#{dclassid},</if>
+				<if test="xclassid !=0">xclassid=#{xclassid},</if>
+			</set>
+			where id=#{id}
+	</update>
+	<!-- 取到插入数据的主键 pid -->
+	<!-- useGeneratedKeys="true" keyProperty="pictuu"
+		在插入数据表时,将自动生成的主键,作为参数的对象pid属性
+	 -->
+	<insert id="prodadd" parameterType="com.st.rbac.pojo.Product" useGeneratedKeys="true" keyProperty="picture">
+		insert into product (prname, protime, sdprice, lowprice, dclassid, xclassid, details, stock) 
+		values (#{prname}, #{protime}, #{sdprice}, #{lowprice}, #{dclassid}, #{xclassid}, #{details},#{stock})
+	</insert>
+	
+	<select id="selectprodByid" resultType="com.st.rbac.pojo.Product">
+		select * from product where id = #{param1}
+	</select>
+	
+	<update id="reducecount">
+		update product set stock = stock-#{param2} where id = #{param1}
+	</update>
+	
+	<update id="addxiaoliang">
+		update product set xiaoliang = xiaoliang+#{param2} where id = #{param1}
+	</update>	
+	
+</mapper>

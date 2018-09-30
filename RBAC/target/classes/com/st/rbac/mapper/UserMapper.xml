@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.st.rbac.mapper.UserMapper">
+  	
+  	<select id="getRows" parameterType="com.st.rbac.pojo.User" resultType="Integer">
+		select count(*) as count from user, staff,category, product where
+  			  user.likeclass = category.id and user.likeprod = product.id
+  			  and user.sfid = staff.id
+			  <if test="sfaid != null">and user.sfaid = #{sfaid}</if>
+			  <if test="sfid != 0 and sfid != null">and user.sfid = #{sfid}</if>
+			  <if test="id != 0 and id != null">and user.id = #{id}</if>
+  	</select>
+  	
+  	<select id="selectuser" resultType="HashMap">
+  		select * from user, staff,category, product where
+  			  user.likeclass = category.id and user.likeprod = product.id
+  			   and user.sfid = staff.id
+	  			 <if test="param2.sfaid != null">and user.sfaid = #{param2.sfaid}</if>
+	  			 <if test="param2.id != 0 and param2.id != null">and user.id =#{param2.id}</if>
+	  			 <if test="param2.sfid != 0 and param2.sfid != null">and user.sfid = #{param2.sfid}</if>
+	  			 <if test="param1.pagerows != 0">limit #{param1.start},#{param1.pagerows}</if>
+  	</select>
+  	
+  	<insert id="adduser" parameterType="com.st.rbac.pojo.User" useGeneratedKeys="true" keyProperty="sellture">
+  		insert into user (username, sex , age, uphone, likeclass, likeprod, likestate, remarks, sfid, sfaid)
+  		 values (#{username},#{sex} , #{age}, #{uphone}, #{likeclass}, #{likeprod}, #{likestate}, #{remarks}, #{sfid}, #{sfaid})
+  	</insert>
+  	
+  	<insert id="addUser" parameterType="com.st.rbac.pojo.User">
+  		insert into user (username, sex, age, uphone, likeclass, likeprod, remarks, sfid, sfaid, likestate)
+  			values (#{username}, #{sex}, #{age}, #{uphone}, #{likeclass}, #{likeprod}, #{remarks}, #{sfid}, #{sfaid},#{likestate})
+  	</insert>
+	
+	<select id="getuser" resultType="HashMap">
+		select * from user,staff,category,product where
+			user.sfid = staff.id and user.likeclass = category.id and user.likeprod = product.id
+		 	and user.sfaid=#{param1} and user.returnstate is null order by rand() limit 10;
+	</select>
+	
+	<update id="modifyuser" parameterType="com.st.rbac.pojo.User">
+		update user set returnstate = #{returnstate} where id = #{id}
+	</update>
+ 
+  </mapper>
