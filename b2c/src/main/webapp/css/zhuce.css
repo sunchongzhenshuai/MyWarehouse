@@ -1,0 +1,125 @@
+*{
+	margin: 0px;
+}
+.top1{
+	margin-top: 25px;
+	background-image: url(../img/headbg.jpg);
+	background-repeat-y: no-repeat;
+	background-position: bottom;
+	height: 85px;
+}
+.top{
+	width: 1210px;
+	margin: auto;
+
+}
+.top img{
+	float: left;
+}
+.top h2{
+	float: left;
+	font-weight: 400;
+	/*font-size: px;*/
+	margin: 10px 0px 0px 20px;
+}
+.top div{
+	float: right;
+	color: #999;
+	margin-top: 30px;
+}
+.top div a{
+	text-decoration: none;
+	color: #e22;
+}
+.top div a:hover{
+	text-decoration: underline;
+	color: #c81623;
+}
+.clear{
+	clear: both;
+}
+.zhongceng{
+	margin: auto;
+	width: 1210px;
+	text-align: center;
+	margin-top: 30px;
+}
+.zhongceng label{
+	display: inline-block;
+	line-height: 45PX;
+	height: 50px;
+	width: 120px;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-right: 0px;
+}
+.zhongceng label:hover{
+	border: 1px solid #333;
+
+}
+.zhongceng input{
+	height: 47px;
+	width: 300px;
+	border: 1px solid #ddd;
+}
+.zhongceng input:hover{
+	border: 1px solid #333;
+}
+.jizhumima input{
+	height: 10px;
+	width: 10px;
+	border: 1px solid #ddd;
+}
+.zhongceng .zhuce{
+	width: 422px;
+	height: 50px;
+	background-color: #e22;
+	border: 1px solid #e22;
+	color: white;
+	font-size: 18px;
+}
+.zhongceng .zhuce:hover{
+	background-color: #c81623;
+}
+/* 充值 */
+.recharge{
+	padding-top: 5px;
+	display: inline-block;
+	width: 422px;
+	height: 50px;
+	font-size: 30px;
+	border: 1px solid #da1026;
+	color: white;
+	background-color: #da1026;
+	text-decoration: none;
+}
+.zcfenlei{
+	margin-top: 30px;
+}
+.zcfenlei a{
+	color: #333;
+	text-decoration: none;
+	margin: 0px 100px;
+	font-size: 15px;
+}
+.tishi{
+	color: #888888;
+	font-size: 12px;
+	margin: 5px;
+	height: 20px;
+}
+.diceng{
+	padding-top:200px ;
+	width: 1210px;
+	margin: auto;
+	text-align: center;
+	color: #999;
+	font-size: 12px;
+	
+}
+.diceng a{
+	margin: 10px;
+	text-decoration: none;
+	color: #999;
+}
+

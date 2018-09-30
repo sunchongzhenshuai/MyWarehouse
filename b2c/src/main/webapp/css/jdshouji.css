@@ -1,0 +1,221 @@
+body{
+	margin: 0px;
+}
+.dingceng1{
+	background-color: #e3e4e5;
+	color: #999;
+	font-size: 12px;
+}
+.dingceng1 .dingc{
+	margin: auto;
+	width: 1210px;
+	line-height: 30px;
+}
+.dingceng1 .dingc a{
+	color: #999;
+	text-decoration: none;
+	margin: 0px 5px;
+}
+.dingceng1 .dingc a:hover{
+	color: #f30213;
+}
+.dingceng1 .dingc div{
+	display: inline;
+}
+.dl-dh{
+	margin-left: 400px;
+}
+.dingceng2 .dingc2{
+	margin: auto;
+	width: 1210px;
+	font-size: 12px;
+}
+.dingceng2 .dingc2 img{
+	float: left;
+	margin-top: 20px;
+}
+.dingceng2 .dingc2 a{
+	color: #999;
+	text-decoration: none;
+}
+.dingceng2 .dingc2 .sousuo{
+	float: left;
+}
+.dingceng2 .dingc2 .sousuo input[type='text']{
+	margin: 30px 0 0 200px;
+	border: 2px solid #f30213;
+	height: 32px;
+	width: 500px;
+}
+.dingceng2 .dingc2 .sousuo input[type='submit']{
+	background-color: #F30213;
+	color: white;
+	font-size: 16px;
+	width: 80px;
+	height: 37px;
+	border: 1px solid #F30213;
+}
+.dingceng2 .dingc2 .chanpin{
+	margin: 5px 0 0 200px;
+	color: #999;
+}
+.dingceng2 .dingc2 .chanpin a{
+	padding: 0px 9.5px;
+}
+.dingceng2 .dingc2 .chanpin a:hover{
+	color: #F30213;
+}
+.dingceng2 .gouwuc{
+	float: left;
+	border: 1px solid #DFDFDF;
+	margin: 30px;
+	background-color: #F9F9F9;
+	padding: 5px 30px 10px 30px;
+}
+.dingceng2 .gouwuc a{
+	color: #F30213;
+	font-size: 12px;
+}
+.dingceng2 .gouwuc sup{
+	color: white;
+	padding: 0px 4px 0 5px;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #F30213;
+	position: relative;
+	left: 5px;
+}
+.dingceng2 .gouwuc .gwcimg{
+	display: inline-block;
+	background-image: url(../img/phone.png);
+	background-repeat: no-repeat;
+	background-position-y: -90px;
+	width: 18px;
+	height: 16px;
+}
+.quxiaofufong{
+	clear: both;
+}
+.dingceng3 .dingc3{
+	margin-left: 18%;
+}
+.dingceng3 .dingc3 a{
+	font-size: 14px;
+	text-decoration: none;
+	color: #333;
+	font-weight: 1000;
+	margin: 10px 30px 0px 0px;
+}
+.dingceng3 .dingc3 a:hover{
+	color: #F30213;
+}
+.dingceng3 .dingc3 .quanbufenlei{
+	background-color: #F30213;
+	padding: 10px 50px 10px 50px;
+	color: white;
+	font-size: 15px;
+}
+.dingceng3 .dingc3 .quanbufenlei:hover{
+	color: white;
+}
+.dingceng3 .fengexian{
+	border: 1px solid #F30213;
+	margin-bottom: 30px;
+}
+.fenceng{
+	margin-top: 20px;
+}
+.fenceng a{
+	margin: 0px 5px;
+	font-size: 12px;
+	color: #666;
+	text-decoration: none;
+}
+.fenceng .fenc{
+	margin: auto;
+	width: 1210px;
+	font-size: 12px;
+	color: #666;
+}
+.fenceng .fenc i{
+	font: 400 13px/13px simsun;
+    color: #666;
+}
+.fenceng .fenc .a{
+	border: 1px solid #ddd;
+	padding: 3px 5px;
+}
+.classify{
+	width: 1390px;
+	margin: auto;
+}
+.classify hr{
+	color: #ddd;
+	margin: 0px;
+}
+.classifyx{
+	display: inline-block;
+	width: 100px;
+	padding: 20px 0px;
+	background-color: #f3f3f3;
+}
+.commlist{
+	width: 1390px;
+	margin: auto;
+}
+.comm{
+	padding: 20px 10px 0px 10px;
+	float: left;
+	border: 1px solid #fff;
+	width: 220px;
+	height: 390px;
+}
+.comm:hover{
+	border-color: #e9e9e9;
+	box-shadow: 0 0 2px 2px #f8f8f8;
+}
+.picture{
+	width: 220px;
+}
+
+.xpicture{
+	width: 25px;
+}
+.price{
+	font-size: 20px;
+	color: #e4393c;
+	text-decoration: none;
+}
+.decripe a{
+	font-size: 12px;
+	text-decoration: none;
+	color: #666;
+}
+.decripe a:hover{
+	color: #e4393c;
+}
+.decripe a span{
+	color: #e4393c;
+}
+
+.sales{
+	color: #646fb0;
+    font-family: verdana;
+    font-weight: 700;
+}
+.clear{
+	clear: both;
+}
+.di{
+	width: 100%;
+}
+.page a{
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	color: #646fb0;
+}
+.classif{
+	display: inline-block;
+	text-decoration: none;
+	padding: 0px 20px;
+}
